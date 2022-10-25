@@ -165,3 +165,118 @@ int main()
 }
 
 ```
+## week08-1:今天從「判斷1個質數」開始寫起,使用for迴圈, 去試2...n-1的數(因為1和n本身,一定會整除)。用一個變數 int bad=0 表示迴圈之前沒有壞掉。如果有整除, 就壞掉、不再是質數
+```cpp
+#include <stdio.h>
+int main()
+{///口訣:倒過來想(稀有的比較好想)
+    int n;
+    scanf("%d",&n);///想試試n是不是質數
+    int bad=0;///一開始還沒有bad壞掉
+    for(int i=2;i<n;i++){///只能被1還有n本身整除
+        if(n%i==0) bad=1;
+    }
+    if(bad==0) printf("%d是質數",n);
+    else printf("%d 不好,不是質數",n);///bad
+}
+```
+## week08-2:先用一個大迴圈, 印出全部的數,接下來, 利用 week08-1.cpp 程式碼的核心, 來判斷 n 是不是質數。
+```cpp
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d",&a);
+
+	for(int n=2;n<=a;n++){
+
+		int bad=0;
+		for(int i=2;i<n;i++){
+		if(n%i==0)bad=1;
+		}
+		if(bad==0) printf("%d ",n);
+	}
+}
+
+```
+## week08-3: 輸入5個數字, 把它們加起來。迴圈前面 int sum=0; 迴圈中間修改 sum += n; 迴圈後面 把 sum 印出來。
+```cpp
+#include <stdio.h>
+int main()
+{
+    printf("請輸入5個數字(要加起來):");
+
+    int n;
+    int sum=0;
+    for(int i=0;i<5;i++){
+        scanf("%d",&n);
+        sum+=n;
+    }
+    printf("總和是:%d",sum);
+}
+
+```
+## week08-4:(1)善用迴圈「建立鷹架(樓層i)」, (2)再把星星搞定, (3) 再把空格搞定, (4) 再拆掉鷹架
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    for(int i=1;i<=n;i++){///(1)鷹架(樓層)
+        ///(3)空格數 + 樓層是 n , 空格=n-i
+        for(int k=1;k<=n-i;k++) printf(" ");
+        ///(2)樓層,與星星數量一樣
+        for(int k=1;k<=i;k++) printf("*");
+        //printf("%d\n",i); ///(1)鷹架(樓層)
+        printf("\n");
+    }
+}
+
+```
+## week08-5:口訣是,正方形。先能用星星印出正方形,表示你的迴圈做好了。接下來if(判斷)來決定什麼時候改印空格, 就要再導一下 第i樓有n-i個空格, 所以 if(k=n-i)時,都印空格
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    for(int i=1;i<=n;i++){
+        for(int k=1;k<=n;k++){
+            ///全部n層樓 第i樓有幾個空格呢?n-i個空格
+            ///k<=n-i 印空格
+            if(k<=n-i) printf(" ");///有時候印空格
+            else       printf("*");///有時候印星星
+        }
+        printf("\n");
+    }
+}
+
+```
+## week08-6:今天是先用前面2個程式作業來引選, 有正方形, 配合 if(判斷)來決定誰印空格、誰印星星後, 再把前一個程式, 逐一把 for迴圈的前面初始變數、中間判斷、後面收尾, 變成 while迴圈的樣子。
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    int i=1;
+    while(i<=n){ 
+            
+        int k=1;
+        while(k<=n){
+        
+            if(k<=n-i) printf(" ");
+            else printf("*");
+            
+            k++;
+        }
+        printf("\n");
+        i++;
+    }
+}
+
+```
