@@ -1,5 +1,5 @@
 # 2022cce
-##week06-1:利用兩層迴圈畫星星,口訣:「左手i、右手j」
+## week06-1:利用兩層迴圈畫星星,口訣:「左手i、右手j」
 ```cpp
 #include <stdio.h>
 int main()
@@ -12,7 +12,7 @@ int main()
     }
 }
 ```
-##week06-2:畫出等腰三角形,口訣:「左手i、右手j」,利用 for(int k=0; k<star; k++) 的迴圈, 來畫出星星
+## week06-2:畫出等腰三角形,口訣:「左手i、右手j」,利用 for(int k=0; k<star; k++) 的迴圈, 來畫出星星
 ```cpp
 #include <stdio.h>
 int main()
@@ -25,7 +25,7 @@ int main()
     }
 }
 ```
-##week06-3:暴力解法,把全部皫數字都試看看能不能整除、能不能約分,如果可以兩個都整除 if(a%i==0 && b%i==0) 就有答案
+## week06-3:暴力解法,把全部皫數字都試看看能不能整除、能不能約分,如果可以兩個都整除 if(a%i==0 && b%i==0) 就有答案
 ```cpp
 int main()
 {
@@ -42,7 +42,7 @@ int main()
     printf("ans: %d 可約分",ans);
 }
 ```
-##week06-4:口訣老大a、老二b、老三c=a%b 如果是0 則老二b是答案。老二變老大、老三變老二, 繼續做,就成功了
+## week06-4:口訣老大a、老二b、老三c=a%b 如果是0 則老二b是答案。老二變老大、老三變老二, 繼續做,就成功了
 ```cpp
 #include <stdio.h>
 int main()
@@ -59,7 +59,7 @@ int main()
     printf("答案b:%d",b);
 }
 ```
-##week06-4:口訣老大a、老二b、老三c=a%b 如果是0 則老二b是答案。老二變老大、老三變老二, 繼續做,就成功了
+## week06-4:口訣老大a、老二b、老三c=a%b 如果是0 則老二b是答案。老二變老大、老三變老二, 繼續做,就成功了
 ```cpp
 #include <stdio.h>
 int main()
@@ -76,7 +76,7 @@ int main()
     printf("答案b:%d",b);
 }
 ```
-##week07-1:long long int 可以裝比較長的整數
+## week07-1:long long int 可以裝比較長的整數
 ```cpp
 #include <stdio.h>
 int main()
@@ -89,7 +89,7 @@ int main()
 }
 
 ```
-##week07-2:週的最大公因數, 改用 long long int 計算
+## week07-2:週的最大公因數, 改用 long long int 計算
 ```cpp
 #include <stdio.h>
 int main()
@@ -106,7 +106,7 @@ int main()
 
 
 ```
-##week07-3:上週教的輾轉相除法 現在改用 long long int 計算
+## week07-3:上週教的輾轉相除法 現在改用 long long int 計算
 ```cpp
 #include <stdio.h>
 int main()
@@ -125,7 +125,7 @@ int main()
 
 
 ```
-##week07-4:會「10進位轉2進位」之前,需要學習一種「剝皮」的技巧,從高位數來剝, 但程式碼有點亂/不一致,從個位數來剝, 把 123456789 分別剝出 
+## week07-4:會「10進位轉2進位」之前,需要學習一種「剝皮」的技巧,從高位數來剝, 但程式碼有點亂/不一致,從個位數來剝, 把 123456789 分別剝出 
 ```cpp
 #include <stdio.h>
 int main()
